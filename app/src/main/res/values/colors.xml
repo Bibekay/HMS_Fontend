@@ -8,4 +8,9 @@
     <color name="editTextBG">#DADADA</color>
     <color name="white">#fdfdfd</color>
     <color name="textColor">#6e6e6e</color>
+
+    //intro button style
+    <color name="gradient_start_color">#4c84ff</color>
+    <color name="gradient_end_color">#18a3fe</color>
+    <color name="tab_indicator_gray">#c0c0c0</color>
 </resources>

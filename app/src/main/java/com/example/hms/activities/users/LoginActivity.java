@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.hms.MainActivity;
 import com.example.hms.R;
+import com.example.hms.activities.welcome_screen.IntroActivity;
 import com.example.hms.bll.LoginBLL;
 import com.example.hms.strictmode.StrictModeClass;
 
@@ -85,7 +86,7 @@ public class LoginActivity extends AppCompatActivity {
         StrictModeClass.StrictMode();
         if (loginBLL.checkUser(username, password)) {
 
-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            Intent intent = new Intent(LoginActivity.this, IntroActivity.class);
             startActivity(intent);
             finish();
 
