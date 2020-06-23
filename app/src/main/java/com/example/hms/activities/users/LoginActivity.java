@@ -9,28 +9,32 @@ import android.widget.Button;
 
 import com.example.hms.R;
 
-public class SignupActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
+    private Button btnsignup, btnlogin;
 
-    Button login, btnSignup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup);
+        setContentView(R.layout.activity_login);
 
-        login = findViewById(R.id.btnAlreadylogin);
+        btnsignup = findViewById(R.id.btnsignup);
 
 
-        login.setOnClickListener(new View.OnClickListener() {
+        btnsignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openLoginpage();
+
+                openSignup();
+
             }
 
-            private void openLoginpage() {
-                Intent goToLogin = new Intent(SignupActivity.this, LoginActivity.class);
-                startActivity(goToLogin);
+            private void openSignup() {
+
+                Intent openSignup = new Intent(LoginActivity.this, SignupActivity.class);
+                startActivity(openSignup);
             }
+
         });
 
     }

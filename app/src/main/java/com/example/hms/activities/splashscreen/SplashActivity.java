@@ -8,6 +8,7 @@ import android.os.Handler;
 
 import com.example.hms.MainActivity;
 import com.example.hms.R;
+import com.example.hms.activities.users.LoginActivity;
 import com.example.hms.activities.users.SignupActivity;
 
 public class SplashActivity extends AppCompatActivity {
@@ -22,7 +23,7 @@ public class SplashActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashActivity.this, SignupActivity.class);
+                Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
             }
