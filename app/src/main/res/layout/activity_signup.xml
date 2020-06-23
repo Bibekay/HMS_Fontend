@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.users.SignupActivity">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="3dp"
+            app:cardUseCompatPadding="true"
+            app:cardPreventCornerOverlap="false"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:background="@color/black"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="HOTEL FINDER"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:textSize="35dp"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:importantForAccessibility="no"
+                    android:id="@+id/imageViewTop"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/linearLayoutTop"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="-10dp"
+                    android:rotation="45"
+                    android:src="@drawable/square"
+                  />
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayoutFullname"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/imageViewTop"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="10dp">
+
+
+                    <EditText
+                        android:id="@+id/etfullname"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentTop="true"
+                        android:background="@color/editTextBG"
+                        android:hint="Full Name"
+                        android:inputType="text"
+                        android:paddingStart="20dp"
+                        android:textSize="15sp"
+                        tools:ignore="HardcodedText,RtlSymmetry" />
+
+                </RelativeLayout>
+
+
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayoutUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/relativeLayoutFullname"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="10dp">
+
+
+                    <EditText
+                        android:id="@+id/etusername"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentTop="true"
+                        android:background="@color/editTextBG"
+                        android:hint="Username"
+                        android:inputType="text"
+                        android:paddingStart="20dp"
+                        android:textSize="15sp"
+                        tools:ignore="HardcodedText,RtlSymmetry" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayoutContact"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/relativeLayoutUsername"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="10dp">
+
+
+
+                    <EditText
+                        android:id="@+id/etcontact"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentTop="true"
+                        android:background="@color/editTextBG"
+                        android:hint="Mobile"
+                        android:inputType="number"
+                        android:paddingStart="20dp"
+                        android:textSize="15sp"
+                        tools:ignore="HardcodedText,RtlSymmetry" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayoutEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/relativeLayoutContact"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="10dp">
+
+
+
+                    <EditText
+                        android:id="@+id/etemail"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentTop="true"
+                        android:background="@color/editTextBG"
+                        android:hint="Email"
+                        android:inputType="text"
+                        android:paddingStart="20dp"
+                        android:textSize="15sp"
+                        tools:ignore="HardcodedText,RtlSymmetry,TextFields" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayoutPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/relativeLayoutEmail"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="10dp">
+
+
+                    <EditText
+                        android:id="@+id/etpassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentTop="true"
+                        android:background="@color/editTextBG"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:paddingStart="20dp"
+                        android:textSize="15sp"
+                        tools:ignore="HardcodedText,RtlSymmetry" />
+
+                </RelativeLayout>
+
+
+
+                <CheckBox
+                    android:id="@+id/chkboxCondtions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/relativeLayoutPassword"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif"
+                    android:text="I agree to the Terms of Service"
+                    android:textColor="@color/textColor" />
+
+                <Button
+                    android:id="@+id/btnregister"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/relativeLayoutPassword"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="45dp"
+                    android:background="@drawable/custombutton"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="SIGN UP"
+                    android:textColor="@color/white"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    android:id="@+id/btnAlreadylogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/btnregister"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@color/transparent"
+                    android:fontFamily="sans-serif"
+                    android:text="Already a member? Login Here"
+                    android:textAllCaps="false"
+                    android:textColor="@color/textColor"
+                    android:textSize="13sp"
+                    tools:ignore="HardcodedText" />
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+</ScrollView>
