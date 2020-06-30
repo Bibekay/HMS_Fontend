@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.hms">
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -13,10 +14,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".activities.users.UserdashActivity"></activity>
+        <activity android:name=".activities.admin.AdmindashActivity" />
         <activity android:name=".activities.welcome_screen.IntroActivity" />
-        <activity android:name=".activities.users.LoginActivity"></activity>
+        <activity android:name=".activities.users.LoginActivity" />
         <activity android:name=".activities.users.SignupActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".activities.splashscreen.SplashActivity">

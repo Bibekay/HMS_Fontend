@@ -13,4 +13,14 @@
     <color name="gradient_start_color">#4c84ff</color>
     <color name="gradient_end_color">#18a3fe</color>
     <color name="tab_indicator_gray">#c0c0c0</color>
+
+
+    //menu style//
+    <!-- Menu Style -->
+
+    <style name="navigationTheme">
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorControlHighlight">@color/white</item>
+
+    </style>
 </resources>

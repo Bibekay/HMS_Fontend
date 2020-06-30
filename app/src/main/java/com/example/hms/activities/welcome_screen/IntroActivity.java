@@ -16,6 +16,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.example.hms.MainActivity;
 import com.example.hms.R;
+import com.example.hms.activities.users.UserdashActivity;
 import com.example.hms.models.ScreenItem;
 import com.google.android.material.tabs.TabLayout;
 
@@ -43,8 +44,8 @@ public class IntroActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         if (restorePrefData()) {
-            Intent mainActivity = new Intent(getApplicationContext(), MainActivity.class );
-            startActivity(mainActivity);
+            Intent userDash = new Intent(getApplicationContext(), UserdashActivity.class );
+            startActivity(userDash);
             finish();
         }
 
