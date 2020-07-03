@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
@@ -80,7 +81,7 @@ public class AdmindashActivity extends AppCompatActivity implements NavigationVi
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         //if user pressed "yes", then he is allowed to exit from application
-                        SharedPreferences sharedPreferences = AdmindashActivity.this.getSharedPreferences("Ride", MODE_PRIVATE);
+                        SharedPreferences sharedPreferences = AdmindashActivity.this.getSharedPreferences("IMS", MODE_PRIVATE);
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         editor.remove("token");
                         editor.remove("isadmin");
@@ -213,7 +214,45 @@ public class AdmindashActivity extends AppCompatActivity implements NavigationVi
     }
 
     @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.logout:
+                AlertDialog.Builder builder = new AlertDialog.Builder(AdmindashActivity.this);
+                builder.setCancelable(false);
+                builder.setMessage("Do you want to Logout?");
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //if user pressed "yes", then he is allowed to exit from application
+                        SharedPreferences sharedPreferences = AdmindashActivity.this.getSharedPreferences("IMS", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.remove("token");
+                        editor.remove("isadmin");
+                        editor.remove("status");
+                        editor.remove("username");
+                        editor.remove("password");
+                        editor.commit();
+                        url.token = "Bearer ";
+                        url.status = "Status";
+                        Intent i = new Intent(AdmindashActivity.this, LoginActivity.class);
+                        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(i);
+                    }
+                });
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                AlertDialog alert = builder.create();
+                alert.show();
+
+
+                break;
+
+
+        }
         return true;
     }
 
