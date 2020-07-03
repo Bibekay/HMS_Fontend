@@ -16,7 +16,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activities.users.UserdashActivity"></activity>
+
+
+        <activity android:name=".activities.admin.UserInfoActivity" />
+        <activity android:name=".activities.users.UserdashActivity" />
         <activity android:name=".activities.admin.AdmindashActivity" />
         <activity android:name=".activities.welcome_screen.IntroActivity" />
         <activity android:name=".activities.users.LoginActivity" />

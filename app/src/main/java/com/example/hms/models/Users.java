@@ -6,6 +6,7 @@ public class Users {
         private String contact;
         private String email;
         private String password;
+    private boolean expandable;
 
         public Users(String fullname, String username, String contact, String email, String password) {
             this.fullname = fullname;
@@ -13,6 +14,7 @@ public class Users {
             this.contact = contact;
             this.email = email;
             this.password = password;
+            this.expandable = false;
         }
 
 
@@ -55,5 +57,13 @@ public class Users {
         public void setPassword(String password) {
             this.password = password;
         }
+
+    public boolean isExpandable() {
+        return expandable;
+    }
+
+    public void setExpandable(boolean expandable) {
+        this.expandable = expandable;
+    }
     }
 

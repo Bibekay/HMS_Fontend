@@ -1,4 +1,4 @@
-package com.example.hms.bll;
+package com.example.hms.activities.bll;
 
 import com.example.hms.api.HMS_API;
 import com.example.hms.models.Users;

@@ -6,10 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.example.hms.MainActivity;
 import com.example.hms.R;
 import com.example.hms.activities.users.LoginActivity;
-import com.example.hms.activities.users.SignupActivity;
 
 public class SplashActivity extends AppCompatActivity {
 

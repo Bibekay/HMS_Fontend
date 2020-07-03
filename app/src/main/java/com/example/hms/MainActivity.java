@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.example.hms.activities.admin.AdmindashActivity;
 import com.example.hms.activities.users.UserdashActivity;
 
 public class MainActivity extends AppCompatActivity {
