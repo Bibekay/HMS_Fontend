@@ -67,7 +67,11 @@ public class AdmindashActivity extends AppCompatActivity implements NavigationVi
             public void onClick(View v) {
                 Intent openUserInfo = new Intent(AdmindashActivity.this, UserInfoActivity.class);
                 startActivity(openUserInfo);
+
+
+
             }
+
         });
 
         //Admin Logout

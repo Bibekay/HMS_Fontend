@@ -5,6 +5,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:openDrawer="left"
     tools:context=".activities.admin.AdmindashActivity">
 
     <com.google.android.material.navigation.NavigationView
@@ -25,13 +26,14 @@
         android:background="@color/white"
         android:orientation="vertical">
 
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:padding="20dp">
 
             <ImageView
-                android:id="@+id/add_icon"
+                android:id="@+id/ic_add"
                 android:layout_width="39dp"
                 android:layout_height="35dp"
                 android:layout_alignParentRight="true"
@@ -46,8 +48,8 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:padding="5dp"
-
-                android:src="@drawable/menu_icon" />
+                android:tint="@color/black"
+                android:src="@drawable/ic_menu" />
 
         </RelativeLayout>
 

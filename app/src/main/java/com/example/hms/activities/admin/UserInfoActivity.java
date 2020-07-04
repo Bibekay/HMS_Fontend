@@ -4,10 +4,13 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,6 +19,7 @@ import com.example.hms.adapter.UserInfoAdapter;
 import com.example.hms.api.Admin_api;
 import com.example.hms.models.Users;
 import com.example.hms.url.url;
+import com.google.android.material.navigation.NavigationView;
 
 import java.util.List;
 
@@ -30,6 +34,17 @@ public class UserInfoActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private SearchView searchusername;
     UserInfoAdapter userinfo_Adapter;
+    ImageView back;
+
+
+    static final float END_SCALE = 0.7f;
+    ImageView menuIcon;
+    LinearLayout contentView;
+
+    //Drawer Menu
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
+
 
     public UserInfoActivity() {
 
@@ -42,10 +57,21 @@ public class UserInfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin_userinfo);
 
         activity = this;
+        back = findViewById(R.id.imgAdminBack);
         recyclerView = findViewById(R.id.users_list);
         searchusername = findViewById(R.id.admin_user_search_view);
 
+
+
         loaduserinfo();
+
+        back.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                AdminDashOpen();
+            }
+        });
 
         searchusername.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 
@@ -67,7 +93,6 @@ public class UserInfoActivity extends AppCompatActivity {
 
         Admin_api userAPI = url.getInstance().create(Admin_api.class);
         Call<List<Users>> usersCall = userAPI.getCustomer(url.token);
-        System.out.println("token is:"+url.token);
 
 
         usersCall.enqueue(new Callback<List<Users>>() {
@@ -91,7 +116,7 @@ public class UserInfoActivity extends AppCompatActivity {
         });
     }
 
-    public void AdminDashOpen(View view) {
+    public void AdminDashOpen() {
         Intent openadmindashboard = new Intent(this, AdmindashActivity.class);
         startActivity(openadmindashboard);
     }

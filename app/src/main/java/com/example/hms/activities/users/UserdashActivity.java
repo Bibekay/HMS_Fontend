@@ -1,5 +1,8 @@
 package com.example.hms.activities.users;
 
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -7,11 +10,14 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.hms.R;
+import com.example.hms.activities.admin.AdmindashActivity;
+import com.example.hms.url.url;
 import com.google.android.material.navigation.NavigationView;
 
 public class UserdashActivity  extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -98,7 +104,43 @@ public class UserdashActivity  extends AppCompatActivity implements NavigationVi
     }
 
     @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.logout:
+                AlertDialog.Builder builder = new AlertDialog.Builder(UserdashActivity.this);
+                builder.setCancelable(false);
+                builder.setMessage("Do you want to Logout?");
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //if user pressed "yes", then he is allowed to exit from application
+                        SharedPreferences sharedPreferences = UserdashActivity.this.getSharedPreferences("IMS", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.remove("token");
+                        editor.remove("isadmin");
+                        editor.remove("status");
+                        editor.remove("username");
+                        editor.remove("password");
+                        editor.commit();
+                        url.token = "Bearer ";
+                        url.status = "Status";
+                        Intent i = new Intent(UserdashActivity.this, LoginActivity.class);
+                        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(i);
+                    }
+                });
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                AlertDialog alert = builder.create();
+                alert.show();
+
+                break;
+
+        }
         return true;
     }
 
