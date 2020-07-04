@@ -7,8 +7,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-    tools:context=".activities.admin.AdmindashActivity">
+    tools:context=".activities.admin.UserInfoActivity">
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation_view"
@@ -22,6 +21,7 @@
 
 
 <LinearLayout
+    android:id="@+id/content"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -51,6 +51,17 @@
             android:layout_alignParentRight="true"
 
             />
+
+        <ImageView
+            android:id="@+id/menu_icon"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_menu"
+            android:tint="@color/black"
+            android:layout_alignParentLeft="true"
+
+            />
+
 
         <androidx.appcompat.widget.SearchView
 
