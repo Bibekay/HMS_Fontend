@@ -60,6 +60,16 @@ public class AdmindashActivity extends AppCompatActivity implements NavigationVi
         //Admin`s info display in Admin Dashboard
         openadminName();
 
+        //Menu Hooks
+
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.navigation_view);
+        menuIcon = findViewById(R.id.menu_icon);
+        contentView = findViewById(R.id.content);
+
+
+        navigationDrawer();
+
         //Admin`s user info display
         rruser.setOnClickListener(new View.OnClickListener() {
 
@@ -74,52 +84,45 @@ public class AdmindashActivity extends AppCompatActivity implements NavigationVi
 
         });
 
-        //Admin Logout
-        rrAdminLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(AdmindashActivity.this);
-                builder.setCancelable(false);
-                builder.setMessage("Do you want to Logout?");
-                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        //if user pressed "yes", then he is allowed to exit from application
-                        SharedPreferences sharedPreferences = AdmindashActivity.this.getSharedPreferences("IMS", MODE_PRIVATE);
-                        SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.remove("token");
-                        editor.remove("isadmin");
-                        editor.remove("status");
-                        editor.remove("username");
-                        editor.remove("password");
-                        editor.commit();
-                        url.token = "Bearer ";
-                        url.status = "Status";
-                        Intent i = new Intent(AdmindashActivity.this, SignupActivity.class);
-                        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(i);
-                    }
-                });
-                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-                AlertDialog alert = builder.create();
-                alert.show();
-            }
-        });
+//        //Admin Logout
+//        rrAdminLogout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                AlertDialog.Builder builder = new AlertDialog.Builder(AdmindashActivity.this);
+//                builder.setCancelable(false);
+//                builder.setMessage("Do you want to Logout?");
+//                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        //if user pressed "yes", then he is allowed to exit from application
+//                        SharedPreferences sharedPreferences = AdmindashActivity.this.getSharedPreferences("IMS", MODE_PRIVATE);
+//                        SharedPreferences.Editor editor = sharedPreferences.edit();
+//                        editor.remove("token");
+//                        editor.remove("isadmin");
+//                        editor.remove("status");
+//                        editor.remove("username");
+//                        editor.remove("password");
+//                        editor.commit();
+//                        url.token = "Bearer ";
+//                        url.status = "Status";
+//                        Intent i = new Intent(AdmindashActivity.this, SignupActivity.class);
+//                        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                        startActivity(i);
+//                    }
+//                });
+//                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        dialog.cancel();
+//                    }
+//                });
+//                AlertDialog alert = builder.create();
+//                alert.show();
+//            }
+//
+//
+//        });
 
-        //Menu Hooks
-
-        drawerLayout = findViewById(R.id.drawer_layout);
-        navigationView = findViewById(R.id.navigation_view);
-        menuIcon = findViewById(R.id.menu_icon);
-        contentView = findViewById(R.id.content);
-
-
-        navigationDrawer();
 
 
     }
@@ -252,8 +255,13 @@ public class AdmindashActivity extends AppCompatActivity implements NavigationVi
                 AlertDialog alert = builder.create();
                 alert.show();
 
+                break;
+
+            case R.id.hotel:
+                startActivity(new Intent(getApplicationContext(), AdminaddhotelsActivity.class));
 
                 break;
+
 
 
         }

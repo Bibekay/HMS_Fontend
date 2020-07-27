@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.admin.AdminaddhotelsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/iv_backpressed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:src="@drawable/ic_back"
+            android:tint="@color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="ADD PRODUCTS"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/civ_hotelImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@+id/imageViewTop"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:importantForAccessibility="no"
+                android:rotation="45"
+                android:src="@drawable/logo" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutHotel"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/civ_hotelImage"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="30dp">
+
+
+                <EditText
+                    android:id="@+id/et_hotelName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:background="@color/white"
+                    android:hint="Hotel Name"
+                    android:inputType="text"
+                    android:paddingStart="20dp"
+                    android:textSize="15sp"
+                    tools:ignore="HardcodedText,RtlSymmetry" />
+
+            </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:id="@+id/rlDescription"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_below="@+id/relativeLayoutHotel"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="30dp">
+
+
+                <EditText
+                    android:id="@+id/et_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:background="@color/white"
+                    android:hint="Description"
+                    android:inputType="text"
+                    android:paddingStart="20dp"
+                    android:textSize="15sp"
+                    tools:ignore="HardcodedText,RtlSymmetry" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rlPrice"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/rlDescription"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="30dp">
+
+
+                <EditText
+                    android:id="@+id/et_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:background="@color/white"
+                    android:hint="Price"
+                    android:inputType="number"
+                    android:paddingStart="20dp"
+                    android:textSize="15sp"
+                    tools:ignore="HardcodedText,RtlSymmetry" />
+
+            </RelativeLayout>
+
+
+            <Button
+                android:id="@+id/btnAddHotel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlPrice"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/custombutton"
+                android:fontFamily="sans-serif-medium"
+                android:text="SAVE"
+                android:textColor="@color/white"
+                tools:ignore="HardcodedText" />
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
