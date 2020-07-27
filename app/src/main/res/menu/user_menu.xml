@@ -9,13 +9,13 @@
             android:icon="@drawable/home"
             />
         <item
-            android:id="@+id/product"
-            android:title="@string/Hotel"
+            android:id="@+id/hotels"
+            android:title="@string/Hotels"
             android:icon="@drawable/product"
             />
         <item
-            android:id="@+id/order"
-            android:title="@string/Feedback"
+            android:id="@+id/booking"
+            android:title="@string/Bookings"
             android:icon="@drawable/order"/>
 
 
@@ -26,12 +26,6 @@
         <menu>
             <group
                 android:checkableBehavior="single">
-
-                <item
-                    android:id="@+id/login"
-                    android:title="@string/Login"
-                    android:icon="@drawable/login"
-                    />
 
                 <item
                     android:id="@+id/profile"

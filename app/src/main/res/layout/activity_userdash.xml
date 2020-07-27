@@ -5,7 +5,8 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.users.UserdashActivity">
+    tools:context=".activities.users.UserdashActivity"
+    tools:openDrawer="left">
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation_view"
@@ -15,7 +16,7 @@
         android:background="@color/white"
         android:theme="@style/navigationTheme"
         app:headerLayout="@layout/usermenu_header"
-        app:menu="@menu/admin_menu" />
+        app:menu="@menu/user_menu" />
 
 
     <LinearLayout
@@ -123,14 +124,14 @@
                         android:orientation="vertical">
 
                         <RelativeLayout
-                            android:layout_width="60dp"
+                            android:layout_width="match_parent"
                             android:layout_height="60dp"
                             android:background="@color/editTextBG">
 
                             <ImageView
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
-                                android:layout_centerInParent="true"
+                                android:layout_centerVertical="true"
                                 android:src="@drawable/product"
                                 android:tint="@color/colorPrimary" />
                         </RelativeLayout>

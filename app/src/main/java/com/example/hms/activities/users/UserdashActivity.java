@@ -140,6 +140,18 @@ public class UserdashActivity  extends AppCompatActivity implements NavigationVi
 
                 break;
 
+            case R.id.hotels:
+                startActivity(new Intent(getApplicationContext(), UserviewhotelsActivity.class));
+
+                break;
+
+            case R.id.profile:
+                startActivity(new Intent(getApplicationContext(), UserprofileActivity.class));
+
+                break;
+
+
+
         }
         return true;
     }

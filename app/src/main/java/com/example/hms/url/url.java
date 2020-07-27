@@ -13,6 +13,7 @@ public class url {
 
     public static String token = "Bearer ";
     public static String status = "Status";
+    public static String imagePath = BASE_URL ;
 
     public static Retrofit getInstance(){
         Retrofit retrofit = new Retrofit.Builder()

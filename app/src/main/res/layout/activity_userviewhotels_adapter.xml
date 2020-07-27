@@ -53,7 +53,7 @@
                 android:fontFamily="sans-serif-medium"/>
 
             <Button
-                android:id="@+id/btnOrder"
+                android:id="@+id/btnViewMore"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@+id/tv_price"
