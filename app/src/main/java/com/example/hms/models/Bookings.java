@@ -20,6 +20,8 @@ public class Bookings {
     @Expose
     private String order_status;
 
+    private boolean expandable;
+
     public Bookings(String id, Users user, Hotels hotel, String order_status) {
         this.id = id;
         this.user = user;
@@ -57,5 +59,13 @@ public class Bookings {
 
     public void setOrder_status(String order_status) {
         this.order_status = order_status;
+    }
+
+    public boolean isExpandable() {
+        return expandable;
+    }
+
+    public void setExpandable(boolean expandable) {
+        this.expandable = expandable;
     }
 }

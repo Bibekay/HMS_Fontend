@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true"
+    tools:context="adapter.UserbookingsAdapter">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:id="@+id/linear_layout_adminuserinfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rv_title"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@color/colorPrimary">
+
+                <TextView
+                    android:id="@+id/tv_hotel_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint=" Hotel Name"
+                    android:padding="16dp"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/civ_hotelImage"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/logo" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/expandable_layout_adminuserdetails"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@+id/tv_hotel"
+                    android:layout_width="120dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:text="Hotel"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tv_hotel_name1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/tv_hotel"
+                    android:fontFamily="sans-serif-medium"
+                    android:hint="Hotel Name"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tv_desc"
+                    android:layout_width="120dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/tv_hotel"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="Description"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+
+                <TextView
+                    android:id="@+id/tv_Description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/tv_hotel_name1"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@+id/tv_desc"
+                    android:fontFamily="sans-serif-medium"
+                    android:hint="Product Description"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tv_cost"
+                    android:layout_width="120dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/tv_desc"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="Price"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tv_Price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/tv_Description"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toEndOf="@+id/tv_cost"
+                    android:fontFamily="sans-serif-medium"
+                    android:hint=" Price"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/btnViewMore"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_cost"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/custombutton"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="View More"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.cardview.widget.CardView>
+
