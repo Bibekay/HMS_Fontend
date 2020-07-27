@@ -31,8 +31,8 @@ public interface HMS_API {
     //for model hotels//
 
     @Multipart
-    @POST("upload/product")
-    Call<ImageResponse> uploadProductImage(@Header("Authorization") String token, @Part MultipartBody.Part file);
+    @POST("upload/hotels")
+    Call<ImageResponse> uploadHotelImage(@Header("Authorization") String token, @Part MultipartBody.Part file);
 
     @FormUrlEncoded
     @POST("hotels/hotel")
