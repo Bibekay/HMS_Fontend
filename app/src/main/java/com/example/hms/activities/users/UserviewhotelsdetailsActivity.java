@@ -2,6 +2,7 @@ package com.example.hms.activities.users;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -77,16 +78,17 @@ public class UserviewhotelsdetailsActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<Bookings> call, Response<Bookings> response) {
                         if (!response.isSuccessful()) {
-                            Toast.makeText(UserviewhotelsdetailsActivity.this, "Order Successfull", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(UserviewhotelsdetailsActivity.this, "Error", Toast.LENGTH_SHORT).show();
                             return;
                         }
 
-                        Toast.makeText(UserviewhotelsdetailsActivity.this, "Order Successfull", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(UserviewhotelsdetailsActivity.this, "Booking Successfull", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(UserviewhotelsdetailsActivity.this, UserbookingActivity.class);
+                        startActivity(intent);
                     }
 
                     @Override
                     public void onFailure(Call<Bookings> call, Throwable t) {
-                        Toast.makeText(UserviewhotelsdetailsActivity.this,  "Order Successfull", Toast.LENGTH_SHORT).show();
                     }
                 });
 

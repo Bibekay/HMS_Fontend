@@ -150,6 +150,11 @@ public class UserdashActivity  extends AppCompatActivity implements NavigationVi
 
                 break;
 
+            case R.id.booking:
+                startActivity(new Intent(getApplicationContext(), UserbookingActivity.class));
+
+                break;
+
 
 
         }
