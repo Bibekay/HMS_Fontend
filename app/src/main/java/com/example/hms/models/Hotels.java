@@ -2,6 +2,7 @@ package com.example.hms.models;
 
 public class Hotels {
 
+    String _id;
     private String hotel_name;
     private String description;
     private String price;
@@ -12,6 +13,14 @@ public class Hotels {
         this.description = description;
         this.price = price;
         this.hotel_image = hotel_image;
+    }
+
+    public String get_id() {
+        return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
     }
 
     public String getHotel_name() {

@@ -1,5 +1,6 @@
 package com.example.hms.api;
 
+import com.example.hms.models.Bookings;
 import com.example.hms.models.Hotels;
 import com.example.hms.models.Users;
 import com.example.hms.serverresponse.ImageResponse;
@@ -58,6 +59,15 @@ public interface HMS_API {
 
     @GET("hotels/hotel")
     Call<List<Hotels>> getHotels(@Header("Authorization") String token);
+
+
+    //for model Bookings//
+
+    @FormUrlEncoded
+    @POST("bookings/booking")
+    Call<Bookings> bookHotel(@Header("Authorization") String token,
+                               @Field("hotel") String hotel);
+
 
 
 }
