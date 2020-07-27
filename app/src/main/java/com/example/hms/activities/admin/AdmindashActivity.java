@@ -22,6 +22,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.example.hms.R;
 import com.example.hms.activities.users.LoginActivity;
 import com.example.hms.activities.users.SignupActivity;
+import com.example.hms.activities.users.UserprofileActivity;
 import com.example.hms.api.HMS_API;
 import com.example.hms.models.Users;
 import com.example.hms.url.url;
@@ -259,6 +260,11 @@ public class AdmindashActivity extends AppCompatActivity implements NavigationVi
 
             case R.id.hotel:
                 startActivity(new Intent(getApplicationContext(), AdminaddhotelsActivity.class));
+
+                break;
+
+            case R.id.profile:
+                startActivity(new Intent(getApplicationContext(), UserprofileActivity.class));
 
                 break;
 

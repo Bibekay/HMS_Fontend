@@ -15,6 +15,7 @@ import com.example.hms.R;
 import com.example.hms.models.Hotels;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.example.hms.url.url.imagePath;
@@ -24,11 +25,12 @@ public class UserviewhotelsAdapter extends RecyclerView.Adapter  <Userviewhotels
 
     Context mContext;
     List<Hotels> hotelsList;
-    private List<Hotels> filteruserList;
+    private List<Hotels> filterhotelList;
 
-    public UserviewhotelsAdapter(Context mContext, List<Hotels> filteruserList) {
+    public UserviewhotelsAdapter(Context mContext, List<Hotels> hotelsList) {
         this.mContext = mContext;
-        this.filteruserList = filteruserList;
+        this.hotelsList = hotelsList;
+        filterhotelList = new ArrayList<>(hotelsList);
 
     }
 
