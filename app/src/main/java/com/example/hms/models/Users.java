@@ -6,7 +6,7 @@ public class Users {
         private String contact;
         private String email;
         private String password;
-    private boolean expandable;
+        private boolean expandable;
 
         public Users(String fullname, String username, String contact, String email, String password) {
             this.fullname = fullname;

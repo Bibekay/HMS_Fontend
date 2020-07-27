@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hms.R;
 import com.example.hms.models.Users;
+import com.example.hms.url.url;
 
 
 import java.util.ArrayList;
@@ -50,7 +51,7 @@ public class UserInfoAdapter extends RecyclerView.Adapter<UserInfoAdapter.UserIn
     public void onBindViewHolder(@NonNull UserInfoAdapter.UserInfoViewHolder holder, int i) {
 
         final Users users = usersList.get(i);
-//        String imgPath = url.imagePath+users.getImage();
+       // String imgPath = url.imagePath+users.getImage();
         holder.fullname.setText(users.getFullname());
         holder.contact.setText(users.getContact());
         holder.username.setText(users.getUsername());
