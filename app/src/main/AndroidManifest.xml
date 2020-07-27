@@ -16,7 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activities.admin.AdminaddhotelsActivity"></activity>
+        <activity android:name=".adapter.UserviewhotelsAdapter"></activity>
+        <activity android:name=".activities.users.UserviewhotelsActivity" />
+        <activity android:name=".activities.admin.AdminaddhotelsActivity" />
         <activity android:name=".activities.admin.UserInfoActivity" />
         <activity android:name=".activities.users.UserdashActivity" />
         <activity android:name=".activities.admin.AdmindashActivity" />
