@@ -40,7 +40,7 @@ public class AdminupdatehotelsActivity extends AppCompatActivity {
 
     String id;
     EditText hotelName, descricption, hotelPrice;
-    ImageView  imageBack;
+    ImageView  imageBack, delete;
     CircleImageView hotelImage;
     Button updateHotel;
     String imagePath, imageName;
@@ -57,6 +57,7 @@ public class AdminupdatehotelsActivity extends AppCompatActivity {
         hotelPrice = findViewById(R.id.et_price);
         hotelImage = findViewById(R.id.civ_hotelImage);
         updateHotel = findViewById(R.id.btnSave);
+        delete = findViewById(R.id.iv_delete);
 
         imageBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,6 +85,42 @@ public class AdminupdatehotelsActivity extends AppCompatActivity {
                 updateHotels();
             }
         });
+
+
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deleteHotel();
+            }
+
+            private void deleteHotel() {
+                HMS_API ims_api = url.getInstance().create(HMS_API.class);
+                Call<Hotels> voidCall = ims_api.deleteHotel(url.token, id);
+
+                voidCall.enqueue(new Callback<Hotels>() {
+                    @Override
+                    public void onResponse(Call<Hotels> call, Response<Hotels> response) {
+
+                        if (!response.isSuccessful()) {
+                            Toast.makeText(AdminupdatehotelsActivity.this, "Code : " + response.code() + ", Message : " + response.message(), Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                        Intent intent = new Intent(AdminupdatehotelsActivity.this, AdminviewbookingsActivity.class);
+                        startActivity(intent);
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<Hotels> call, Throwable t) {
+                        Toast.makeText(AdminupdatehotelsActivity.this, "Error " + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+
+            }
+        });
+
+
 
         hotelImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -176,7 +213,7 @@ public class AdminupdatehotelsActivity extends AppCompatActivity {
                     Toast.makeText(AdminupdatehotelsActivity.this, "Code : " + response.code() + ", Message : " + response.message(), Toast.LENGTH_SHORT).show();
                     return;
                 }
-                Intent intent = new Intent(AdminupdatehotelsActivity.this, AdminaddhotelsActivity.class);
+                Intent intent = new Intent(AdminupdatehotelsActivity.this, AdminviewbookingsActivity.class);
                 startActivity(intent);
 
             }

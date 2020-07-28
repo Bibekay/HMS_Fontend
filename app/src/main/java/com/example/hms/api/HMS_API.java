@@ -11,6 +11,7 @@ import java.util.List;
 import okhttp3.MultipartBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -63,6 +64,9 @@ public interface HMS_API {
 
     @PUT("hotels/{id}/Update")
     Call<Hotels> updateHotel(@Header("Authorization") String token, @Path("id") String id, @Body Hotels hotels);
+
+    @DELETE("hotels/deleteHotel/{id}/")
+    Call<Hotels> deleteHotel(@Header("Authorization") String token, @Path("id") String id);
 
 
 
