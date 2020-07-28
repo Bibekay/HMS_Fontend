@@ -13,6 +13,11 @@
             android:title="@string/Hotel"
             android:icon="@drawable/product"
             />
+
+        <item
+            android:id="@+id/viewhotel"
+            android:title="@string/ViewHotel"
+            android:icon="@drawable/product"/>
         <item
             android:id="@+id/booking"
             android:title="@string/Bookings"

@@ -85,45 +85,6 @@ public class AdmindashActivity extends AppCompatActivity implements NavigationVi
 
         });
 
-//        //Admin Logout
-//        rrAdminLogout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                AlertDialog.Builder builder = new AlertDialog.Builder(AdmindashActivity.this);
-//                builder.setCancelable(false);
-//                builder.setMessage("Do you want to Logout?");
-//                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int which) {
-//                        //if user pressed "yes", then he is allowed to exit from application
-//                        SharedPreferences sharedPreferences = AdmindashActivity.this.getSharedPreferences("IMS", MODE_PRIVATE);
-//                        SharedPreferences.Editor editor = sharedPreferences.edit();
-//                        editor.remove("token");
-//                        editor.remove("isadmin");
-//                        editor.remove("status");
-//                        editor.remove("username");
-//                        editor.remove("password");
-//                        editor.commit();
-//                        url.token = "Bearer ";
-//                        url.status = "Status";
-//                        Intent i = new Intent(AdmindashActivity.this, SignupActivity.class);
-//                        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//                        startActivity(i);
-//                    }
-//                });
-//                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int which) {
-//                        dialog.cancel();
-//                    }
-//                });
-//                AlertDialog alert = builder.create();
-//                alert.show();
-//            }
-//
-//
-//        });
-
 
 
     }
@@ -270,6 +231,11 @@ public class AdmindashActivity extends AppCompatActivity implements NavigationVi
 
             case R.id.booking:
                 startActivity(new Intent(getApplicationContext(), AdminviewbookingsActivity.class));
+
+                break;
+
+            case R.id.viewhotel:
+                startActivity(new Intent(getApplicationContext(), AdminviewhotelsActivity.class));
 
                 break;
 

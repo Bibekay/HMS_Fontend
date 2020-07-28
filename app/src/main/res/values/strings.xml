@@ -8,4 +8,5 @@
     <string name="Feedback">Feedback</string>
     <string name="Bookings">Bookings</string>
     <string name="Hotels">Hotels</string>
+    <string name="ViewHotel">View Hotel</string>
 </resources>
