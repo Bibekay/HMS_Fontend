@@ -71,6 +71,10 @@ public interface HMS_API {
     @GET("bookings/userBookings")
     Call<List<Bookings>> getMyBookings(@Header("Authorization") String token);
 
+    @GET("bookings/booking")
+    Call<List<Bookings>> getAllBookings(@Header("Authorization") String token);
+
+
 
 
 }

@@ -268,6 +268,11 @@ public class AdmindashActivity extends AppCompatActivity implements NavigationVi
 
                 break;
 
+            case R.id.booking:
+                startActivity(new Intent(getApplicationContext(), AdminviewbookingsActivity.class));
+
+                break;
+
 
 
         }

@@ -14,7 +14,7 @@
             android:icon="@drawable/product"
             />
         <item
-            android:id="@+id/feeback"
+            android:id="@+id/booking"
             android:title="@string/Bookings"
             android:icon="@drawable/order"/>
 
