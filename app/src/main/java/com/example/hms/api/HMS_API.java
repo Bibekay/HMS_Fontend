@@ -19,6 +19,7 @@ import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Part;
+import retrofit2.http.Path;
 
 public interface HMS_API {
     //  for Users model //
@@ -59,6 +60,10 @@ public interface HMS_API {
 
     @GET("hotels/hotel")
     Call<List<Hotels>> getHotels(@Header("Authorization") String token);
+
+    @PUT("hotels/{id}/Update")
+    Call<Hotels> updateHotel(@Header("Authorization") String token, @Path("id") String id, @Body Hotels hotels);
+
 
 
     //for model Bookings//
