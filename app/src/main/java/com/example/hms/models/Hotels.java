@@ -15,6 +15,8 @@ public class Hotels {
         this.hotel_image = hotel_image;
     }
 
+
+
     public String get_id() {
         return _id;
     }
