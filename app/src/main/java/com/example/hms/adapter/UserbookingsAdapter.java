@@ -5,15 +5,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.hms.R;
+import com.example.hms.activities.admin.AdminupdatehotelsActivity;
+import com.example.hms.activities.users.UsercancelbookingsActivity;
 import com.example.hms.models.Bookings;
 import com.squareup.picasso.Picasso;
 
@@ -57,9 +61,29 @@ public class UserbookingsAdapter extends  RecyclerView.Adapter<UserbookingsAdapt
         holder.descriptions.setText(bookings.getHotel().getDescription());
         holder.cost.setText(bookings.getHotel().getPrice());
 
-
         boolean isExpandble = bookingsList.get(i).isExpandable();
         holder.expandableLayout.setVisibility(isExpandble ? View.VISIBLE : View.GONE);
+
+        holder.viewMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(mContext, UsercancelbookingsActivity.class);
+                intent.putExtra("id", bookings.getId());
+                intent.putExtra("hotel_name",bookings.getHotel().getHotel_name());
+                intent.putExtra("description",bookings.getHotel().getDescription());
+                intent.putExtra("price",bookings.getHotel().getPrice());
+                intent.putExtra("hotel_image", bookings.getHotel().getHotel_image());
+
+                mContext.startActivity(intent);
+
+            }
+        });
+
+
+
+
+
 
     }
 
@@ -74,6 +98,8 @@ public class UserbookingsAdapter extends  RecyclerView.Adapter<UserbookingsAdapt
         TextView hotelName, title, descriptions, cost;
         LinearLayout linearLayout;
         RelativeLayout expandableLayout;
+        Button viewMore;
+
 
         public UserbookingsViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -84,6 +110,7 @@ public class UserbookingsAdapter extends  RecyclerView.Adapter<UserbookingsAdapt
             descriptions = itemView.findViewById(R.id.tv_Description);
             cost = itemView.findViewById(R.id.tv_Price);
             title = itemView.findViewById(R.id.tv_hotel_name);
+            viewMore = itemView.findViewById(R.id.btnViewMore);
 
 
             linearLayout = itemView.findViewById(R.id.linear_layout_adminuserinfo);

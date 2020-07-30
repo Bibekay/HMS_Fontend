@@ -66,7 +66,7 @@ public class AdminupdatehotelsActivity extends AppCompatActivity {
             }
         });
 
-        //retriving single data through recycle view from productAdapter  //
+        //retriving single data through recycle view   //
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             id = bundle.getString("id");
@@ -105,7 +105,7 @@ public class AdminupdatehotelsActivity extends AppCompatActivity {
                             Toast.makeText(AdminupdatehotelsActivity.this, "Code : " + response.code() + ", Message : " + response.message(), Toast.LENGTH_SHORT).show();
                             return;
                         }
-                        Intent intent = new Intent(AdminupdatehotelsActivity.this, AdminviewbookingsActivity.class);
+                        Intent intent = new Intent(AdminupdatehotelsActivity.this, AdminviewhotelsActivity.class);
                         startActivity(intent);
 
                     }

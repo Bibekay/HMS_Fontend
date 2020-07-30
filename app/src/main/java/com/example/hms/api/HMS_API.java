@@ -83,6 +83,11 @@ public interface HMS_API {
     @GET("bookings/booking")
     Call<List<Bookings>> getAllBookings(@Header("Authorization") String token);
 
+    @DELETE("bookings/cancelBooking/{id}/")
+    Call<Bookings> deleteBooking(@Header("Authorization") String token, @Path("id") String id);
+
+
+
 
 
 
