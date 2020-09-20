@@ -60,8 +60,8 @@ public class AdminaddhotelsActivity extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                AdminaddhotelsActivity.super.onBackPressed();
+                Intent i = new Intent(AdminaddhotelsActivity.this, AdmindashActivity.class);
+                startActivity(i);
             }
         });
 

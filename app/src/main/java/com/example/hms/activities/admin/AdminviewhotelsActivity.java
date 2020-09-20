@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -42,8 +43,8 @@ public class AdminviewhotelsActivity extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                AdminviewhotelsActivity.super.onBackPressed();
+                Intent i = new Intent(AdminviewhotelsActivity.this, AdmindashActivity.class);
+                startActivity(i);
             }
         });
 
