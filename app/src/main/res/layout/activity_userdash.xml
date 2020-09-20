@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.users.UserdashActivity"
-    tools:openDrawer="left">
+>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation_view"
@@ -71,42 +71,21 @@
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:fontFamily="sans-serif-medium"
-                        android:text="Hotel Finder"
+                        android:text="Welcome "
                         android:textColor="@color/colorPrimaryDark"
-                        android:textSize="32sp"
+                        android:textSize="30sp"
                         android:textStyle="bold" />
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_below="@+id/tv_title"
-                        android:layout_marginLeft="40dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginRight="40dp"
-                        android:layout_marginBottom="20dp"
-                        android:background="@color/editTextBG"
-                        android:elevation="8dp">
-
-                        <EditText
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_marginLeft="15dp"
-                            android:hint="Search..."
-                            android:textColorHint="@color/colorPrimary"
-                            android:textColor="@color/colorPrimary" />
-
-                        <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
-                            android:layout_marginRight="15dp"
-                            android:src="@drawable/search"
-                            android:tint="@color/colorPrimary" />
-
-
-                    </RelativeLayout>
+                    <TextView
+                        android:id="@+id/txtusername"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:hint="Username "
+                        android:layout_toRightOf="@+id/tv_title"
+                        android:textColor="@color/colorRed"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
                 </RelativeLayout>
 
@@ -124,25 +103,25 @@
                         android:orientation="vertical">
 
                         <RelativeLayout
-                            android:layout_width="match_parent"
+                            android:id="@+id/rruser"
+                            android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:background="@color/editTextBG">
 
                             <ImageView
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
-                                android:layout_centerVertical="true"
-                                android:src="@drawable/product"
-                                android:tint="@color/colorPrimary" />
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/admin" />
                         </RelativeLayout>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:text="Rice"
+                            android:text="User"
                             android:textAlignment="center"
-                            android:textColor="@color/black" />
+                            android:textColor="@color/colorRed" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -168,7 +147,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:text="Oils"
+                            android:text="Hotels"
                             android:textAlignment="center"
                             android:textColor="@color/black" />
                     </LinearLayout>
@@ -196,7 +175,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:text="Grains"
+                            android:text="Bookings"
                             android:textAlignment="center"
                             android:textColor="@color/black" />
                     </LinearLayout>
@@ -207,6 +186,7 @@
                         android:orientation="vertical">
 
                         <RelativeLayout
+                            android:id="@+id/rradminlogout"
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:background="@color/editTextBG">
@@ -215,58 +195,19 @@
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
                                 android:layout_centerInParent="true"
-                                android:src="@drawable/login"
-                                android:tint="@color/colorPrimary" />
+                                android:src="@drawable/adminexit" />
                         </RelativeLayout>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:text="Soaps"
+                            android:text="Offers"
                             android:textAlignment="center"
-                            android:textColor="@color/black" />
+                            android:textColor="@color/colorRed" />
                     </LinearLayout>
 
                 </LinearLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@color/editTextBG">
-
-                    <LinearLayout
-                        android:id="@+id/features_products"
-                        android:layout_width="170dp"
-                        android:layout_height="280dp"
-                        android:layout_marginLeft="20dp"
-                        android:background="@color/colorPrimary"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="50dp"
-                            android:text="ALL
-                    Features
-                 products"
-                            android:textAllCaps="true"
-                            android:textColor="@color/white"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:layout_width="match_parent"
-                        android:layout_height="260dp"
-                        android:layout_toRightOf="@+id/features_products"
-                        android:background="@color/white" />
-
-
-                </RelativeLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -284,7 +225,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-medium"
-                            android:text="Recently Added products"
+                            android:text="Recently Added Hotels"
                             android:textAllCaps="true"
                             android:textColor="@color/colorPrimaryDark"
                             android:textSize="20sp"
@@ -323,7 +264,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-medium"
-                            android:text="Categories"
+                            android:text="Offers"
                             android:textAllCaps="true"
                             android:textColor="@color/colorPrimaryDark"
                             android:textSize="20sp"
@@ -348,7 +289,6 @@
 
 
             </LinearLayout>
-
 
         </ScrollView>
 

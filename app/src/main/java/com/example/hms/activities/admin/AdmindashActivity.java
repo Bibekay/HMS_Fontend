@@ -103,17 +103,6 @@ public class AdmindashActivity extends AppCompatActivity implements NavigationVi
                     Toast.makeText(AdmindashActivity.this, "code" + response.code(), Toast.LENGTH_SHORT).show();
                     return;
                 }
-//                if(response.body().getImage()!=null) {
-//                    String imgpath = url.BASE_URL + response.body().getImage();
-//                    System.out.println("image response is :"+imgpath);
-//
-//                    Picasso.get().load(imgpath).into(imgProfileAdmin);
-//
-//                }
-//                else
-//                {
-//                    Picasso.get().load(R.drawable.image1).into(imgProfileAdmin);
-//                }
 
                 adminName.setText(response.body().getUsername());
 

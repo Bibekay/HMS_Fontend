@@ -69,7 +69,7 @@ public class SignupActivity extends AppCompatActivity {
                         }
 
                         Toast.makeText(SignupActivity.this, "Signup Successfull", Toast.LENGTH_SHORT).show();
-                        Intent openHome = new Intent(SignupActivity.this, MainActivity.class);
+                        Intent openHome = new Intent(SignupActivity.this, LoginActivity.class);
                         startActivity(openHome);
                     }
 

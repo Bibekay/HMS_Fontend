@@ -162,10 +162,12 @@ public class AdminaddhotelsActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Hotels> call, Response<Hotels> response) {
                 if (!response.isSuccessful()) {
-                    Toast.makeText(AdminaddhotelsActivity.this, "Code : " + response.code() + ", Message : " + response.message(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AdminaddhotelsActivity.this, "Invalid input " , Toast.LENGTH_SHORT).show();
                     return;
-                }
 
+                }
+                Intent i = new Intent(AdminaddhotelsActivity.this, AdminviewhotelsActivity.class);
+                startActivity(i);
             }
 
             @Override
