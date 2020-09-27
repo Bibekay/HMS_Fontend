@@ -49,7 +49,9 @@ public class UsercancelbookingsActivity extends AppCompatActivity {
         imageBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UsercancelbookingsActivity.super.onBackPressed();
+                Intent intent = new Intent(UsercancelbookingsActivity.this, UserbookingActivity.class);
+                startActivity(intent);
+
             }
         });
 

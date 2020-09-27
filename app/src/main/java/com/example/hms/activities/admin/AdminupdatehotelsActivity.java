@@ -213,7 +213,7 @@ public class AdminupdatehotelsActivity extends AppCompatActivity {
                     Toast.makeText(AdminupdatehotelsActivity.this, "Code : " + response.code() + ", Message : " + response.message(), Toast.LENGTH_SHORT).show();
                     return;
                 }
-                Intent intent = new Intent(AdminupdatehotelsActivity.this, AdminviewbookingsActivity.class);
+                Intent intent = new Intent(AdminupdatehotelsActivity.this, AdminviewhotelsActivity.class);
                 startActivity(intent);
 
             }

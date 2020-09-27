@@ -1,10 +1,12 @@
 package com.example.hms.activities.users;
 
+import androidx.annotation.DrawableRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.loader.content.CursorLoader;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -34,6 +36,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static com.example.hms.R.drawable.proifle;
+import static com.example.hms.R.drawable.uprofile;
+
 public class UserprofileActivity extends AppCompatActivity {
 
     ImageView back;
@@ -51,6 +56,8 @@ public class UserprofileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_userprofile);
 
+
+
         back = findViewById(R.id.iv_backpressed);
         tvUsername = findViewById(R.id.tvUsername);
         etFullname = findViewById(R.id.etFullname);
@@ -58,7 +65,7 @@ public class UserprofileActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.etEmail);
         etBirthyear = findViewById(R.id.etBirthyear);
         etGender = findViewById(R.id.etGender);
-        ivProfile = findViewById(R.id.ivProfile);
+        ivProfile = findViewById(R.id.ivProfilee);
         btnUpdateprofile = findViewById(R.id.btnUpdateprofile);
 
 
@@ -200,6 +207,8 @@ public class UserprofileActivity extends AppCompatActivity {
 
             } else {
                 Toast.makeText(UserprofileActivity.this, "Please select an image ", Toast.LENGTH_SHORT).show();
+              //  ivProfile.setImageDrawable( Drawable.createFromPath("urpofile", ));
+
             }
         } else {
             Toast.makeText(UserprofileActivity.this, "image couldnot upload", Toast.LENGTH_SHORT).show();
@@ -229,10 +238,20 @@ public class UserprofileActivity extends AppCompatActivity {
         usersCall.enqueue(new Callback<Users>() {
             @Override
             public void onResponse(Call<Users> call, Response<Users> response) {
-                if(!response.isSuccessful()){
-                    Toast.makeText(UserprofileActivity.this, "code" + response.code(), Toast.LENGTH_SHORT ).show();
+                if (!response.isSuccessful()) {
+                    Toast.makeText(UserprofileActivity.this, "code" + response.code(), Toast.LENGTH_SHORT).show();
                     return;
                 }
+             
+                if(imagePath == null) {
+                    Picasso.get().load(uprofile).into(ivProfile);
+                }
+//            else{
+//                    Picasso.get().load(uprofile).into(ivProfile);
+//                    System.out.println("image response is :"+uprofile);
+//                }
+
+
                 tvUsername.setText(response.body().getUsername());
                 etFullname.setText(response.body().getFullname());
                 etcontact.setText(response.body().getContact());
