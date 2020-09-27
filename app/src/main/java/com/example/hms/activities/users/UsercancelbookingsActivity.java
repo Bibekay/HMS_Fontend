@@ -86,7 +86,7 @@ public class UsercancelbookingsActivity extends AppCompatActivity {
                             Toast.makeText(UsercancelbookingsActivity.this, "Code : " + response.code() + ", Message : " + response.message(), Toast.LENGTH_SHORT).show();
                             return;
                         }
-                        Intent intent = new Intent(UsercancelbookingsActivity.this, UserbookingActivity.class);
+                        Intent intent = new Intent(UsercancelbookingsActivity.this, UserdashActivity.class);
                         startActivity(intent);
 
                     }
